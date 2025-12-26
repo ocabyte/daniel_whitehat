@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel Cross | Cyber Security Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            900: '#0f172a',
+                            950: '#020617', // Deep charcoal
+                        },
+                        cyan: {
+                            500: '#06b6d4',
+                            900: '#164e63',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, #1e293b 1px, transparent 1px), linear-gradient(to bottom, #1e293b 1px, transparent 1px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom "Silent" Styles */
+        body {
+            background-color: #020617;
+            color: #e2e8f0;
+        }
+        
+        .bg-grid {
+            background-size: 40px 40px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(6, 182, 212, 0.5); /* Cyan glow on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Subtle scanline animation */
+        @keyframes scan {
+            0% { transform: translateY(-100%); opacity: 0; }
+            50% { opacity: 0.5; }
+            100% { transform: translateY(100%); opacity: 0; }
+        }
+        .scan-line {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(6, 182, 212, 0.1), transparent);
+            animation: scan 4s infinite linear;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <i data-lucide="shield-check" class="text-cyan-500 w-6 h-6"></i>
+                <span class="font-mono font-bold tracking-wider text-sm">DANIEL CROSS_</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+                <a href="#contact" class="text-cyan-500 hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center justify-center pt-20">
+        <div class="absolute inset-0 bg-grid-pattern bg-grid opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-900/20 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-xs font-mono mb-8">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                SYSTEM SECURE // READY
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-white to-slate-500">
+                Cyber Security <br> Without Compromise.
+            </h1>
+            
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto font-light">
+                Securing critical systems through precision and expertise. Advanced assessments for enterprises and high-risk environments.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="px-8 py-3 bg-slate-100 text-slate-950 font-semibold rounded hover:bg-white transition-colors">
+                    Request Consultation
+                </a>
+                <a href="#services" class="px-8 py-3 border border-slate-700 text-slate-300 font-medium rounded hover:border-slate-500 hover:bg-slate-900 transition-all">
+                    View Services
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-slate-800/50 bg-slate-900/30">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-3xl font-bold text-white mb-1">10+</div>
+                <div class="text-xs font-mono text-slate-500 uppercase tracking-widest">Years Experience</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-white mb-1">200+</div>
+                <div class="text-xs font-mono text-slate-500 uppercase tracking-widest">Assessments</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-white mb-1">100%</div>
+                <div class="text-xs font-mono text-slate-500 uppercase tracking-widest">Confidentiality</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-bold text-white mb-1">F500</div>
+                <div class="text-xs font-mono text-slate-500 uppercase tracking-widest">Client Base</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                    <span class="text-cyan-500 font-mono">01.</span> About The Expert
+                </h2>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    I am Daniel Cross, a cyber security consultant with over a decade of experience protecting enterprise and cloud environments. My work focuses on identifying advanced threats before attackers can exploit them, ensuring resilience against real-world adversaries.
+                </p>
+                <p class="text-slate-400 leading-relaxed mb-8">
+                    Unlike automated scanners, I provide manual, logic-based testing to uncover deep-seated vulnerabilities in Zero-Trust architectures and critical infrastructure.
+                </p>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-cyan-500"></i> Enterprise Pen-Testing
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-cyan-500"></i> Cloud Security Arch
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-cyan-500"></i> Incident Response
+                    </div>
+                    <div class="flex items-center gap-3 text-sm text-slate-300">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-cyan-500"></i> Threat Modeling
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative h-[400px] w-full bg-slate-900 rounded border border-slate-800 p-6 font-mono text-xs text-slate-500 overflow-hidden">
+                <div class="scan-line"></div>
+                <div class="opacity-50 space-y-2">
+                    <p>> Initiating handshake...</p>
+                    <p>> Connection established (TLS 1.3)</p>
+                    <p>> Loading modules:</p>
+                    <p class="pl-4 text-cyan-600">[+] RECON_FRAMEWORK</p>
+                    <p class="pl-4 text-cyan-600">[+] VULN_ANALYSIS</p>
+                    <p class="pl-4 text-cyan-600">[+] EXPLOIT_DB_REF</p>
+                    <p>> Analyzing network topology...</p>
+                    <p>> 127 Nodes detected.</p>
+                    <p class="text-emerald-500">> Target identified: Enterprise_Gateway_01</p>
+                    <p>...</p>
+                </div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <i data-lucide="lock" class="w-24 h-24 text-slate-700 opacity-20"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 bg-slate-900/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                <span class="text-cyan-500 font-mono">02.</span> Strategic Services
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-lg relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="crosshair" class="w-24 h-24 text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Penetration Testing</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Rigorous internal and external assessments simulating real-world attacks to identify entry points before malicious actors do.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 font-mono">
+                        <li>// Black box / White box</li>
+                        <li>// Web App & API</li>
+                        <li>// Network Infrastructure</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-lg relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="cloud" class="w-24 h-24 text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Cloud Security</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Comprehensive configuration reviews and architecture hardening for AWS and Azure environments.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 font-mono">
+                        <li>// IAM Analysis</li>
+                        <li>// Container Security</li>
+                        <li>// Compliance Mapping</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-lg relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="shield-alert" class="w-24 h-24 text-slate-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Red Teaming</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Full-scope adversarial simulation testing your people, processes, and technology against sophisticated threats.
+                    </p>
+                    <ul class="text-xs text-slate-500 space-y-2 font-mono">
+                        <li>// Phishing Simulations</li>
+                        <li>// Physical Security</li>
+                        <li>// Evasion Techniques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+                <span class="text-cyan-500 font-mono">03.</span> Case Experience
+            </h2>
+
+            <div class="space-y-8">
+                <div class="border-l-2 border-slate-800 pl-8 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-900 border-2 border-cyan-500 rounded-full"></div>
+                    <div class="mb-1 text-cyan-500 font-mono text-sm">FinTech Sector</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Financial Institution Security Review</h3>
+                    <p class="text-slate-400 text-sm mb-4 max-w-2xl">
+                        Conducted a depth-first assessment of a legacy banking core migration.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-slate-900/50 p-3 rounded border border-slate-800">
+                            <div class="text-emerald-400 font-bold">45%</div>
+                            <div class="text-xs text-slate-500">Attack Surface Reduced</div>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded border border-slate-800">
+                            <div class="text-emerald-400 font-bold">Critical</div>
+                            <div class="text-xs text-slate-500">Auth Flaws Patched</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-l-2 border-slate-800 pl-8 relative">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 bg-slate-900 border-2 border-slate-600 rounded-full"></div>
+                    <div class="mb-1 text-cyan-500 font-mono text-sm">Enterprise SaaS</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Global SaaS Provider Red Team</h3>
+                    <p class="text-slate-400 text-sm mb-4 max-w-2xl">
+                        Simulated an APT (Advanced Persistent Threat) group targeting client data reservoirs.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-slate-900/50 p-3 rounded border border-slate-800">
+                            <div class="text-emerald-400 font-bold">SOC</div>
+                            <div class="text-xs text-slate-500">Workflows Optimized</div>
+                        </div>
+                        <div class="bg-slate-900/50 p-3 rounded border border-slate-800">
+                            <div class="text-emerald-400 font-bold">0 Days</div>
+                            <div class="text-xs text-slate-500">Downtime Caused</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-6 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="flex items-center gap-2 border border-slate-700 px-4 py-2 rounded">
+                    <span class="font-bold text-slate-300">OSCP</span> <span class="text-xs text-slate-500">Offensive Security</span>
+                </div>
+                <div class="flex items-center gap-2 border border-slate-700 px-4 py-2 rounded">
+                    <span class="font-bold text-slate-300">CISSP</span> <span class="text-xs text-slate-500">ISC²</span>
+                </div>
+                <div class="flex items-center gap-2 border border-slate-700 px-4 py-2 rounded">
+                    <span class="font-bold text-slate-300">CRTO</span> <span class="text-xs text-slate-500">Red Team Ops</span>
+                </div>
+                <div class="flex items-center gap-2 border border-slate-700 px-4 py-2 rounded">
+                    <span class="font-bold text-slate-300">AWS</span> <span class="text-xs text-slate-500">Certified Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-6">Secure Your Infrastructure</h2>
+            <p class="text-slate-400 mb-10">
+                Discuss your security posture with a trusted expert. All communications are confidential.
+            </p>
+
+            <div class="glass-card p-8 rounded-lg text-left">
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-mono text-slate-500 mb-2 uppercase">Identity</label>
+                            <input type="text" placeholder="Name" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-slate-200 focus:outline-none focus:border-cyan-500 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-500 mb-2 uppercase">Contact Point</label>
+                            <input type="email" placeholder="Email" class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-slate-200 focus:outline-none focus:border-cyan-500 transition-colors">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono text-slate-500 mb-2 uppercase">Transmission</label>
+                        <textarea rows="4" placeholder="Brief details on security requirements..." class="w-full bg-slate-900 border border-slate-700 rounded p-3 text-slate-200 focus:outline-none focus:border-cyan-500 transition-colors"></textarea>
+                    </div>
+                    
+                    <div class="flex items-center justify-between mt-4">
+                        <div class="flex items-center gap-2 text-xs text-slate-500">
+                            <i data-lucide="lock" class="w-3 h-3"></i> Encrypted via SSL
+                        </div>
+                        <button class="bg-cyan-600 text-white px-8 py-3 rounded font-medium hover:bg-cyan-500 transition-colors">
+                            Initiate Handshake
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-8 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 gap-4">
+                    <a href="mailto:daniel.cross@secureconsult.com" class="hover:text-cyan-500 transition-colors">daniel.cross@secureconsult.com</a>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com" class="hover:text-cyan-500 transition-colors">LinkedIn</a>
+                        <span class="text-slate-700">|</span>
+                        <a href="https://www.github.com" class="hover:text-cyan-500 transition-colors font-mono text-xs">PGP Key: 0x4A2...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-slate-600 text-xs font-mono border-t border-slate-900">
+        <p>&copy; 2024 Daniel Cross Consulting. No cookies used for tracking.</p>
+        <a href="https://www.facebook.com/profile.php?id=100063808086007">Built by <u>OcaByte Solutions</u></a>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
